@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style3r.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Student Registration</h2>
+
+    <form id="registrationForm" method="post">
+
+      <!-- Student ID -->
+      <label for="studentId">Student ID</label>
+      <input type="text" id="studentId" name="studentId" placeholder="Enter Student ID" required>
+
+      <!-- Full Name -->
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="Fullname" placeholder="Enter Full Name" required>
+
+      <!-- Email -->
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter Email" required>
+      <button type="button" id="sendOtpBtn">Send OTP</button>
+
+      <!-- OTP -->
+      <label for="otp">OTP</label>
+      <input type="text" id="otp" placeholder="Enter 6-digit OTP" disabled>
+      <button type="button" id="verifyOtpBtn" disabled>Verify OTP</button>
+
+      <!-- Phone -->
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone"
+             placeholder="Enter Phone Number (e.g. +919876543210)" required>
+
+      <!-- College -->
+      <label for="college">College Name</label>
+      <input type="text" id="college" name="college" placeholder="Enter College Name" required>
+
+      <!-- Department -->
+      <label for="department">Department Name</label>
+      <input type="text" id="department" name="department" placeholder="Enter Department Name" required>
+
+      <!-- DOB -->
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <!-- Enrollment -->
+      <label for="enroll">Enrollment Number</label>
+      <input type="text" id="enroll" name="enroll" placeholder="Enter Enrollment Number" required>
+
+      <!-- Password -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password"
+             placeholder="Min 8 chars (letters + numbers)" required>
+
+      <!-- Confirm Password -->
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword"
+             placeholder="Confirm Password" required>
+
+      <!-- Register Button -->
+      <button herf ="student-login.html" type="submit" id="registerBtn" disabled>Register</button>
+
+      <!-- Login Link -->
+      <p class="login-link">
+        Already registered?
+        <a href="student-login.html">Login here</a>
+      </p>
+
+    </form>
+  </div>
+
+  <script src="script3register.js"></script>
+</body>
+</html>

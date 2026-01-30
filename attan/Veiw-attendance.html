@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Attendance</title>
+  <style>
+    body { font-family: Arial; background:#eef1f4; padding:20px; }
+    table { width:100%; border-collapse:collapse; background:#fff; }
+    th, td { border:1px solid #aaa; padding:10px; text-align:center; }
+    th { background:#34495e; color:#fff; }
+  </style>
+</head>
+<body>
+
+<h2>Student Attendance</h2>
+
+Student ID:
+<input type="text" id="sid">
+
+Subject:
+<select id="sub">
+  <option>Maths</option>
+  <option>Science</option>
+</select>
+
+<button onclick="load()">View</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="result"></tbody>
+</table>
+
+<script>
+function load(){
+  const sid = document.getElementById("sid").value;
+  const sub = document.getElementById("sub").value;
+  const data = JSON.parse(localStorage.getItem("attendance")) || [];
+  const res = document.getElementById("result");
+  res.innerHTML = "";
+
+  const f = data.filter(r => r.studentId===sid && r.subject===sub);
+
+  if(f.length===0){
+    res.innerHTML = "<tr><td colspan='2'>Attendance Not Marked Yet</td></tr>";
+    return;
+  }
+
+  f.forEach(r => {
+    res.innerHTML += `<tr><td>${r.date}</td><td>${r.status}</td></tr>`;
+  });
+}
+</script>
+
+</body>
+</html>
+
